@@ -1,0 +1,44 @@
+# Please make sure to update the license_key information with the
+# license key for your New Relic account.
+#
+newrelic:
+  #
+  # Update with your New Relic account license key:
+  #
+  license_key: '<%= node[:newrelic][:license_key] %>'
+  #
+  # Set to '1' for verbose output, remove for normal output.
+  # All output goes to stdout/stderr.
+  #
+  # verbose: 1
+#
+# AWS configuration.
+#
+aws:
+  # Update with your AWS account keys:
+  access_key: '<%= node[:newrelic][:aws_cloudwatch][:aws_access_key] %>'
+  secret_key: '<%= node[:newrelic][:aws_cloudwatch][:aws_secret_key] %>'
+  # Specify AWS regions to query for metrics
+  # regions:
+  #   us-east-1
+  <%- if node[:newrelic][:aws_cloudwatch][:regions] %>
+  regions:
+    <%- node[:newrelic][:aws_cloudwatch][:regions].each do |region| %>
+    <%= region %>
+    <%- end %>
+  <%- end %>
+#
+# Agent configuration.
+#
+agents:
+  #
+  # Uncomment an agent to enable it. Set 'overview' to true to
+  # enable its overview plugin (eg. EC2 Overview), displaying all
+  # metrics on a single dashboard (currently only available for EC2 & EBS).
+  # Available agents: ec2, ebs, elb, rds, sqs, sns, and ec
+  # Note: Overview dashboards are being deprecated
+  #
+<% node[:newrelic][:aws_cloudwatch][:agents].each do |agent| %>
+  <%= agent %>:
+    overview: false
+<% end %>

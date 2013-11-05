@@ -1,0 +1,15 @@
+[
+  <% node[:newrelic][:mysql][:servers].each do |server| %>
+  {
+    "name"    : "<%= server[:name] %>",
+    "host"    : "<%= server[:host] %>",
+    "metrics" : "<%= server[:metrics] %>",
+    <% if server[:user] %>
+    "user"    : "<%= server[:user] %>",
+    <% end %>
+    <% if server[:passwd] %>
+    "passwd"  : "<%= server[:passwd] %>"
+    <% end %>
+  },
+  <% end %>
+]
