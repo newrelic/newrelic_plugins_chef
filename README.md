@@ -1,6 +1,12 @@
 ## New Relic Plugin's Cookbook ##
 
-### Note: This Cookbook is currently in Beta and will be moved to the Chef Community site shortly. Please provide any feedback to <jstenhouse@newrelic.com> or create a pull request here. ###
+### Note: This Cookbook is currently in Beta ###
+
+The cookbook will be moved to the Chef Community after the beta. To use the cookbook, clone or download this repo and add it to your Chef cookbooks path under the name `newrelic_plugins`. Follow the usage instructions below.
+
+Please provide any feedback to <jstenhouse@newrelic.com> or create a pull request here. Thanks!
+
+## Overview ##
 
 This cookbook installs, configures and manages as a service New Relic Plugins on Debian/RHEL. 
 
@@ -12,7 +18,17 @@ Recipes for the following plugins are provided:
  - Example (Ruby)
 
 ## Requirements ##
+
 Chef 0.10.10+ and Ohai 6.10+ for `platform_family` support.
+
+The AWS Cloudwatch, F5 and Example plugins require:
+
+- Ruby >= 1.8.7 
+- Rubygems >= 1.8
+
+The MySQL plugin requires: 
+
+- Java Runtime Environment (JRE) >= 1.6
 
 ## Platforms ##
  - Debian 
@@ -172,7 +188,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
  
  `node[:newrelic][:msyql][:install_path]` -  _(required)_ Install Directory
  
- `node[:newrelic][:mysql][:servers]` -  _(required)_ Array of MySQL Servers. If using the default username and password, the `user`, `passwd` attributes kept be left off.
+ `node[:newrelic][:mysql][:servers]` -  _(required)_ Array of MySQL Servers. If using the default username and password, the `user` and `passwd` attributes can be left off.
 
  `node[:newrelic][:mysql][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support.
 
