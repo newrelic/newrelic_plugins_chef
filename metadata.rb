@@ -21,10 +21,10 @@ attribute 'newrelic/license_key',
   :type => 'string',
   :required => 'required',
   :recipes => [
-    'newrelic_plugins-plugins::aws_cloudwatch',
-    'newrelic_plugins-plugins::f5',
-    'newrelic_plugins-plugins::example',
-    'newrelic_plugins-plugins::mysql'
+    'newrelic_plugins::aws_cloudwatch',
+    'newrelic_plugins::f5',
+    'newrelic_plugins::example',
+    'newrelic_plugins::mysql'
   ]
 
 attribute 'newrelic/aws_cloudwatch/install_path',
