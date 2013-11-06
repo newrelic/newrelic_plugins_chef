@@ -38,5 +38,5 @@ plugin_service 'newrelic-mysql-plugin' do
   daemon_dir      node[:newrelic][:mysql][:plugin_path]
   plugin_name     'MySQL'
   plugin_version  node[:newrelic][:mysql][:version]
-  run_command     'java -jar'
+  run_command     "java #{node[:newrelic][:mysql][:java_options]} -jar"
 end

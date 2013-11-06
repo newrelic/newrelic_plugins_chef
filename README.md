@@ -1,4 +1,7 @@
 ## New Relic Plugin's Cookbook ##
+
+### Note: This Cookbook is currently in Beta and will be moved to the Chef Community site shortly. Please provide any feedback to <jstenhouse@newrelic.com> or create a pull request here. ###
+
 This cookbook installs, configures and manages as a service New Relic Plugins on Debian/RHEL. 
 
 Recipes for the following plugins are provided:
@@ -171,6 +174,8 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
  
  `node[:newrelic][:mysql][:servers]` -  _(required)_ Array of MySQL Servers. If using the default username and password, the `user`, `passwd` attributes kept be left off.
 
+ `node[:newrelic][:mysql][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support.
+
 #### Usage: ####
 
     name "newrelic_mysql_plugin"
@@ -183,6 +188,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "mysql" => {
           "install_path" => "/path/to/plugin",
+          "java_options" => "-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345",
           "servers" => [
             {
               "name"    => "Production Master",
@@ -211,4 +217,4 @@ This cookbook is under the included MIT License.
 
 ## Contact ##
 
-Contribute to this Cookbook at https://github.com/newrelic-platform/newrelic_plugins_chef. Any other feedback or support related questions can be sent to <support@newrelic.com>. 
+Contribute to this Cookbook at https://github.com/newrelic-platform/newrelic_plugins_chef. Any other feedback or support related questions can be sent to support @ newrelic.com. 
