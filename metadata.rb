@@ -55,6 +55,13 @@ attribute 'newrelic/aws_cloudwatch/agents',
   :required => 'required',
   :recipes => ['newrelic_plugins::aws_cloudwatch']
 
+attribute 'newrelic/aws_cloudwatch/regions',
+  :display_name => 'New Relic AWS Cloudwatch Plugin Regions',
+  :description => 'AWS Regions for New Relic AWS Cloudwatch Plugin',
+  :type => 'array',
+  :required => 'optional',
+  :recipes => ['newrelic_plugins::aws_cloudwatch']
+
 attribute 'newrelic/example/install_path',
   :display_name => 'New Relic Example Plugin Install Directory',
   :description => 'Install Directory for New Relic Example Plugin',
@@ -88,4 +95,11 @@ attribute 'newrelic/mysql_plugin/servers',
   :description => 'Server Configurations for New Relic MySQL Plugin',
   :type => 'array',
   :required => 'required',
+  :recipes => ['newrelic_plugins::mysql']
+
+attribute 'newrelic/mysql_plugin/java_options',
+  :display_name => 'New Relic MySQL Plugin Java Command Options',
+  :description => 'Java command options for New Relic MySQL Plugin',
+  :type => 'string',
+  :required => 'optional',
   :recipes => ['newrelic_plugins::mysql']
