@@ -1,10 +1,10 @@
 # aws cloudwatch plugin attributes
-default[:newrelic][:aws_cloudwatch][:version] = "3.1.0"
+default[:newrelic][:aws_cloudwatch][:version] = "3.2.0"
 default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newrelic-platform/newrelic_aws_cloudwatch_plugin/archive/#{node[:newrelic][:aws_cloudwatch][:version]}.tar.gz"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin-#{node[:newrelic][:aws_cloudwatch][:version]}"
 
 # mysql plugin attributes
-default[:newrelic][:mysql][:version] = "1.0.7"
+default[:newrelic][:mysql][:version] = "1.0.9"
 default[:newrelic][:mysql][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_mysql_java_plugin/master/dist/newrelic_mysql_plugin-#{node[:newrelic][:mysql][:version]}.tar.gz"
 default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_path]}/newrelic_mysql_plugin-#{node[:newrelic][:mysql][:version]}"
 
