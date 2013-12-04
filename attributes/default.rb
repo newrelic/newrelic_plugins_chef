@@ -7,6 +7,7 @@ default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_clo
 default[:newrelic][:mysql][:version] = "1.0.9"
 default[:newrelic][:mysql][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_mysql_java_plugin/master/dist/newrelic_mysql_plugin-#{node[:newrelic][:mysql][:version]}.tar.gz"
 default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_path]}/newrelic_mysql_plugin-#{node[:newrelic][:mysql][:version]}"
+default[:newrelic][:mysql][:java_options] = '-Xmx128m'
 
 # example plugin attributes
 default[:newrelic][:example][:version] = "1.0.1"

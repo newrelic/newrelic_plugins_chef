@@ -190,7 +190,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
  
  `node[:newrelic][:mysql][:servers]` -  _(required)_ Array of MySQL Servers. If using the default username and password, the `user` and `passwd` attributes can be left off.
 
- `node[:newrelic][:mysql][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support.
+ `node[:newrelic][:mysql][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support. Defaults to `-Xmx128m` for max 128mb heap size, but can be overridden.
 
 #### Usage: ####
 
