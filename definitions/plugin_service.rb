@@ -17,5 +17,6 @@ define :plugin_service do
   # manage service
   service params[:name] do
     action [:enable, :start]
+    subscribes :restart, "template[/etc/init.d/#{params[:name]}]", :immediately
   end
 end
