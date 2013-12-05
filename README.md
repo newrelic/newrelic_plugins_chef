@@ -59,6 +59,7 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "aws_cloudwatch" => {
           "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
           "aws_access_key" => "AWS_ACCESS_KEY",
           "aws_secret_key" => "AWS_SECRET_KEY",
           "agents" => [
@@ -69,6 +70,7 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
         },
         "mysql" => {
           "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
           "servers" => [
             {
               "name"    => "Production 1",
@@ -90,6 +92,8 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
  
  `node[:newrelic][:aws_cloudwatch][:install_path]` -  _(required)_ Install Directory
  
+ `node[:newrelic][:aws_cloudwatch][:user]` - _(required)_ User to run as
+ 
  `node[:newrelic][:aws_cloudwatch][:aws_access_key]` -  _(required)_ AWS Cloudwatch Access Key
  
  `node[:newrelic][:aws_cloudwatch][:aws_secret_key]` -  _(required)_ AWS Cloudwatch Secret Key
@@ -110,6 +114,7 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "aws_cloudwatch" => {
           "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
           "aws_access_key" => "AWS_ACCESS_KEY",
           "aws_secret_key" => "AWS_SECRET_KEY",
           "agents" => [
@@ -131,6 +136,8 @@ For additional info, see https://github.com/newrelic-platform/newrelic_aws_cloud
  
  `node[:newrelic][:example][:install_path]` -  _(required)_ Install Directory
  
+ `node[:newrelic][:example][:user]` - _(required)_ User to run as
+ 
 #### Usage: ####
 
     name "newrelic_example_plugin"
@@ -142,7 +149,8 @@ For additional info, see https://github.com/newrelic-platform/newrelic_aws_cloud
       "newrelic" => {
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "example" => {
-          "install_path" => "/path/to/plugin"
+          "install_path" => "/path/to/plugin",
+          "user" => "newrelic"
         }
       }
     )
@@ -156,6 +164,8 @@ For additional info, see https://github.com/newrelic-platform/newrelic_example_p
  `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
  
  `node[:newrelic][:f5][:install_path]` -  _(required)_ Install Directory
+ 
+ `node[:newrelic][:f5][:user]` - _(required)_ User to run as
  
  `node[:newrelic][:f5][:agents]` - _(required)_ Array of F5 agents to monitor.
 
@@ -171,6 +181,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_example_p
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "f5" => {
           "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
           "agents" => [
             {
               "name"           => "f5",
@@ -193,6 +204,8 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
  
  `node[:newrelic][:msyql][:install_path]` -  _(required)_ Install Directory
  
+ `node[:newrelic][:mysql][:user]` - _(required)_ User to run as
+ 
  `node[:newrelic][:mysql][:servers]` -  _(required)_ Array of MySQL Servers. If using the default username and password, the `user` and `passwd` attributes can be left off.
 
  `node[:newrelic][:mysql][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support. Defaults to `-Xmx128m` for max 128mb heap size, but can be overridden.
@@ -209,6 +222,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
         "license_key" => "NEW_RELIC_LICENSE_KEY",
         "mysql" => {
           "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
           "java_options" => "-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345",
           "servers" => [
             {

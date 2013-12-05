@@ -6,6 +6,7 @@ verify_attributes do
   attributes [
     'node[:newrelic][:license_key]',
     'node[:newrelic][:mysql][:install_path]',
+    'node[:newrelic][:mysql][:user]',
     'node[:newrelic][:mysql][:servers]'
   ]
 end
@@ -16,12 +17,14 @@ install_plugin 'newrelic_mysql_plugin' do
   plugin_version   node[:newrelic][:mysql][:version]
   install_path     node[:newrelic][:mysql][:install_path]
   download_url     node[:newrelic][:mysql][:download_url]
+  user             node[:newrelic][:mysql][:user]
 end
 
 # create template newrelic.properties file
 template "#{node[:newrelic][:mysql][:plugin_path]}/config/newrelic.properties" do
   source 'mysql/newrelic.properties.erb'
   action :create
+  owner node[:newrelic][:mysql][:user]
   notifies :restart, "service[newrelic-mysql-plugin]"
 end
 
@@ -29,6 +32,7 @@ end
 template "#{node[:newrelic][:mysql][:plugin_path]}/config/mysql.instance.json" do
   source 'mysql/mysql.instance.json.erb'
   action :create
+  owner node[:newrelic][:mysql][:user]
   notifies :restart, "service[newrelic-mysql-plugin]"
 end
 
