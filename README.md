@@ -73,11 +73,11 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
           "user" => "newrelic",
           "servers" => [
             {
-              "name"    => "Production 1",
-              "host"    => "localhost",
-              "metrics" => "status,newrelic",
-              "user"    => "USER",
-              "passwd"  => "PASSWORD"
+              "name"          => "Production 1",
+              "host"          => "localhost",
+              "metrics"       => "status,newrelic",
+              "mysql_user"    => "USER",
+              "mysql_passwd"  => "PASSWORD"
             }
           ]
         }
@@ -226,18 +226,18 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
           "java_options" => "-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345",
           "servers" => [
             {
-              "name"    => "Production Master",
-              "host"    => "master-host",
-              "metrics" => "status,newrelic,master",
-              "user"    => "USER_NAME_HERE",
-              "passwd"  => "USER_CLEAR_TEXT_PASSWORD_HERE"
+              "name"          => "Production Master",
+              "host"          => "master-host",
+              "metrics"       => "status,newrelic,master",
+              "mysql_user"    => "USER_NAME_HERE",
+              "mysql_passwd"  => "USER_CLEAR_TEXT_PASSWORD_HERE"
             },
             {
-              "name"    => "Production Slave",
-              "host"    => "slave-host",
-              "metrics" => "status,newrelic,slave",
-              "user"    => "USER_NAME_HERE",
-              "passwd"  => "USER_CLEAR_TEXT_PASSWORD_HERE"
+              "name"          => "Production Slave",
+              "host"          => "slave-host",
+              "metrics"       => "status,newrelic,slave",
+              "mysql_user"    => "USER_NAME_HERE",
+              "mysql_passwd"  => "USER_CLEAR_TEXT_PASSWORD_HERE"
             }
           ]
         }

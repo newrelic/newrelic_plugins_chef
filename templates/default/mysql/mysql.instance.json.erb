@@ -4,11 +4,11 @@
     "name"    : "<%= server[:name] %>",
     "host"    : "<%= server[:host] %>",
     "metrics" : "<%= server[:metrics] %>",
-    <% if server[:user] %>
-    "user"    : "<%= server[:user] %>",
+    <% if server[:mysql_user] %>
+    "user"    : "<%= server[:mysql_user] %>",
     <% end %>
-    <% if server[:passwd] %>
-    "passwd"  : "<%= server[:passwd] %>"
+    <% if server[:mysql_passwd] %>
+    "passwd"  : "<%= server[:mysql_passwd] %>"
     <% end %>
   },
   <% end %>
