@@ -30,6 +30,11 @@ The MySQL plugin requires:
 
 - Java Runtime Environment (JRE) >= 1.6
 
+There are several Java and Ruby Chef Cookbooks available on the Chef Community site.
+
+- http://community.opscode.com/cookbooks/java
+- http://community.opscode.com/cookbooks/ruby_build
+
 ## Platforms ##
  - Debian 
  - Ubuntu 
