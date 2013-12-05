@@ -77,7 +77,7 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
               "host"          => "localhost",
               "metrics"       => "status,newrelic",
               "mysql_user"    => "USER",
-              "mysql_passwd"  => "PASSWORD"
+              "mysql_passwd"  => "CLEAR_TEXT_PASSWORD"
             }
           ]
         }
