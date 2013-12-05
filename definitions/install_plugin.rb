@@ -7,12 +7,14 @@ define :install_plugin do
   # create install path
   directory params[:install_path] do
     action :create
+    owner params[:user]
   end
 
   # download plugin tar file
   remote_file download_path do
     source params[:download_url]
     action :create_if_missing
+    owner params[:user]
     not_if { File.directory?(plugin_path) }
   end
 
@@ -22,6 +24,7 @@ define :install_plugin do
     code <<-EOH
       tar zxvf #{download_path}
     EOH
+    user params[:user]
     not_if { File.directory?(plugin_path) }
   end
 
