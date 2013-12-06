@@ -29,6 +29,7 @@ end
 install_plugin 'newrelic_aws_cloudwatch_plugin' do
   plugin_version   node[:newrelic][:aws_cloudwatch][:version]
   install_path     node[:newrelic][:aws_cloudwatch][:install_path]
+  plugin_path      node[:newrelic][:aws_cloudwatch][:plugin_path]
   download_url     node[:newrelic][:aws_cloudwatch][:download_url]
   user             node[:newrelic][:aws_cloudwatch][:user]
 end
