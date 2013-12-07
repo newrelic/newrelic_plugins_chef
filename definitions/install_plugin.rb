@@ -1,6 +1,6 @@
 define :install_plugin do
 
-  tar_file = "#{params[:install_path]}/#{params[:name]}-#{params[:plugin_version]}.tar.gz"
+  tar_file = File.join(params[:install_path], "#{params[:name]}-#{params[:plugin_version]}.tar.gz")
 
   # create install path
   directory params[:install_path] do
@@ -26,6 +26,7 @@ define :install_plugin do
   end
 
   # extract plugin tar file to params[:plugin_path]
+  # if not using gzipped tars, the tar command may be different
   bash "extract #{params[:name]} resource" do
     cwd params[:plugin_path]
     code <<-EOH
@@ -33,7 +34,7 @@ define :install_plugin do
     EOH
     user params[:user]
     # directory is empty if it has 2 entries (implicit . and .. entries)
-    only_if { Dir.exist?(params[:plugin_path]) && Dir.entries(params[:plugin_path]).size == 2 }
+    only_if { File.directory?(params[:plugin_path]) && Dir.entries(params[:plugin_path]) == %w(. ..) }
   end
 
 end
