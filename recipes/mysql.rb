@@ -16,6 +16,7 @@ verify_license_key node[:newrelic][:license_key]
 install_plugin 'newrelic_mysql_plugin' do
   plugin_version   node[:newrelic][:mysql][:version]
   install_path     node[:newrelic][:mysql][:install_path]
+  plugin_path      node[:newrelic][:mysql][:plugin_path]
   download_url     node[:newrelic][:mysql][:download_url]
   user             node[:newrelic][:mysql][:user]
 end

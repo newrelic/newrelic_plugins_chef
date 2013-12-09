@@ -90,7 +90,7 @@ An example of using the AWS Cloudwatch and MySQL plugins with a defined role. Se
  
  `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
  
- `node[:newrelic][:aws_cloudwatch][:install_path]` -  _(required)_ Install Directory
+ `node[:newrelic][:aws_cloudwatch][:install_path]` -  _(required)_ Install directory. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_aws_cloudwatch_plugin`.
  
  `node[:newrelic][:aws_cloudwatch][:user]` - _(required)_ User to run as
  
@@ -134,7 +134,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_aws_cloud
 
  `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
  
- `node[:newrelic][:example][:install_path]` -  _(required)_ Install Directory
+ `node[:newrelic][:example][:install_path]` -  _(required)_ Install directory. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_example_plugin`.
  
  `node[:newrelic][:example][:user]` - _(required)_ User to run as
  
@@ -163,7 +163,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_example_p
 
  `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
  
- `node[:newrelic][:f5][:install_path]` -  _(required)_ Install Directory
+ `node[:newrelic][:f5][:install_path]` -  _(required)_ Install directory.
  
  `node[:newrelic][:f5][:user]` - _(required)_ User to run as
  
@@ -202,7 +202,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
  
  `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
  
- `node[:newrelic][:msyql][:install_path]` -  _(required)_ Install Directory
+ `node[:newrelic][:msyql][:install_path]` -  _(required)_ Install directory. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_mysql_plugin`.
  
  `node[:newrelic][:mysql][:user]` - _(required)_ User to run as
  

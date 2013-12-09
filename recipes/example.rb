@@ -15,6 +15,7 @@ verify_license_key node[:newrelic][:license_key]
 install_plugin 'newrelic_example_plugin' do
   plugin_version   node[:newrelic][:example][:version]
   install_path     node[:newrelic][:example][:install_path]
+  plugin_path      node[:newrelic][:example][:plugin_path]
   download_url     node[:newrelic][:example][:download_url] 
   user             node[:newrelic][:example][:user]
 end

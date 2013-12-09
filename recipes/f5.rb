@@ -21,11 +21,13 @@ end
 # create install path
 directory node[:newrelic][:f5][:install_path] do
   action :create
+  recursive true
   owner node[:newrelic][:f5][:user]
 end
 
 directory "#{node[:newrelic][:f5][:install_path]}/config" do
   action :create
+  recursive true
   owner node[:newrelic][:f5][:user]
 end
 
