@@ -26,6 +26,7 @@ template "#{node[:newrelic][:mysql][:plugin_path]}/config/newrelic.properties" d
   source 'mysql/newrelic.properties.erb'
   action :create
   owner node[:newrelic][:mysql][:user]
+  mode "0400"
   notifies :restart, "service[newrelic-mysql-plugin]"
 end
 
@@ -34,6 +35,7 @@ template "#{node[:newrelic][:mysql][:plugin_path]}/config/mysql.instance.json" d
   source 'mysql/mysql.instance.json.erb'
   action :create
   owner node[:newrelic][:mysql][:user]
+  mode "0400"
   notifies :restart, "service[newrelic-mysql-plugin]"
 end
 
