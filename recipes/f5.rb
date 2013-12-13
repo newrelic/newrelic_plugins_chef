@@ -19,20 +19,20 @@ gem_package 'newrelic_f5_plugin' do
 end
 
 # create install path
-directory node[:newrelic][:f5][:install_path] do
+directory node[:newrelic][:f5][:plugin_path] do
   action :create
   recursive true
   owner node[:newrelic][:f5][:user]
 end
 
-directory "#{node[:newrelic][:f5][:install_path]}/config" do
+directory "#{node[:newrelic][:f5][:plugin_path]}/config" do
   action :create
   recursive true
   owner node[:newrelic][:f5][:user]
 end
 
 # newrelic template
-template "#{node[:newrelic][:f5][:install_path]}/config/newrelic_plugin.yml" do
+template "#{node[:newrelic][:f5][:plugin_path]}/config/newrelic_plugin.yml" do
   source 'f5/newrelic_plugin.yml.erb'
   action :create
   owner node[:newrelic][:f5][:user]
@@ -41,7 +41,7 @@ end
 
 # install init.d script and start service
 plugin_service 'newrelic-f5-plugin' do
-  daemon_dir      node[:newrelic][:f5][:install_path]
+  daemon_dir      node[:newrelic][:f5][:plugin_path]
   plugin_name     'F5'
   plugin_version  node[:newrelic][:f5][:version]
   run_command     "sudo -u #{node[:newrelic][:f5][:user]} f5_monitor run"

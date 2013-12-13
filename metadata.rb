@@ -32,6 +32,14 @@ attribute 'newrelic/aws_cloudwatch/install_path',
   :description => 'Install Path for New Relic AWS Cloudwatch Plugin',
   :type => 'string',
   :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::aws_cloudwatch']
+
+attribute 'newrelic/aws_cloudwatch/user',
+  :display_name => 'New Relic AWS Cloudwatch Plugin User',
+  :description => 'User to run as for New Relic AWS Cloudwatch Plugin',
+  :type => 'string',
+  :required => 'required',
   :recipes => ['newrelic_plugins::aws_cloudwatch']
 
 attribute 'newrelic/aws_cloudwatch/aws_access_key',
@@ -67,11 +75,27 @@ attribute 'newrelic/example/install_path',
   :description => 'Install Directory for New Relic Example Plugin',
   :type => 'string',
   :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::example']
+
+attribute 'newrelic/example/user',
+  :display_name => 'New Relic Example Plugin User',
+  :description => 'User to run as for New Relic Example Plugin',
+  :type => 'string',
+  :required => 'required',
   :recipes => ['newrelic_plugins::example']
 
 attribute 'newrelic/f5/install_path',
   :display_name => 'New Relic F5 Plugin Install Directory',
   :description => 'Install Directory for New Relic F5 Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::f5']
+
+attribute 'newrelic/f5/user',
+  :display_name => 'New Relic F5 Plugin User',
+  :description => 'User to run as for New Relic F5 Plugin',
   :type => 'string',
   :required => 'required',
   :recipes => ['newrelic_plugins::f5']
@@ -86,6 +110,14 @@ attribute 'newrelic/f5/agents',
 attribute 'newrelic/mysql/install_path',
   :display_name => 'New Relic MySQL Plugin Install Path',
   :description => 'Install Path for New Relic MySQL Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::mysql']
+
+attribute 'newrelic/mysql/user',
+  :display_name => 'New Relic MySQL Plugin User',
+  :description => 'User to run as for New Relic MySQL Plugin',
   :type => 'string',
   :required => 'required',
   :recipes => ['newrelic_plugins::mysql']
