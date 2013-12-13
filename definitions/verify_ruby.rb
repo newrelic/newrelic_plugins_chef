@@ -1,5 +1,5 @@
 define :verify_ruby do
-  ohai "reload" do
+  ohai "reload ohai for #{params[:name]}" do
     action :reload
   end
   ruby_block "verify ruby for #{params[:name]}" do
