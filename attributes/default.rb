@@ -12,6 +12,14 @@ default[:newrelic][:mysql][:install_path] = "/opt/newrelic"
 default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_path]}/newrelic_mysql_plugin"
 default[:newrelic][:mysql][:java_options] = '-Xmx128m'
 
+# memcached (java) plugin attributes
+default[:newrelic][:memcached_java][:version] = "1.0.1"
+default[:newrelic][:memcached_java][:user] = "root"
+default[:newrelic][:memcached_java][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_memcached_java_plugin/master/dist/newrelic_memcached_plugin-#{node[:newrelic][:memcached_java][:version]}.tar.gz"
+default[:newrelic][:memcached_java][:install_path] = "/opt/newrelic"
+default[:newrelic][:memcached_java][:plugin_path] = "#{node[:newrelic][:memcached_java][:install_path]}/newrelic_memcached_java_plugin"
+default[:newrelic][:memcached_java][:java_options] = '-Xmx128m'
+
 # example plugin attributes
 default[:newrelic][:example][:version] = "1.0.1"
 default[:newrelic][:example][:download_url] = "https://github.com/newrelic-platform/newrelic_example_plugin/archive/release/#{node[:newrelic][:example][:version]}.tar.gz"
@@ -22,3 +30,9 @@ default[:newrelic][:example][:plugin_path] = "#{node[:newrelic][:example][:insta
 default[:newrelic][:f5][:version] = "1.0.7"
 default[:newrelic][:f5][:install_path] = "/opt/newrelic"
 default[:newrelic][:f5][:plugin_path] = "#{node[:newrelic][:f5][:install_path]}/newrelic_f5_plugin"
+
+# memcached (ruby) plugin attributes
+default[:newrelic][:memcached_ruby][:version] = "1.0.1"
+default[:newrelic][:memcached_ruby][:download_url] = "https://github.com/newrelic-platform/newrelic_memcached_plugin/archive/release/#{node[:newrelic][:memcached_ruby][:version]}.tar.gz"
+default[:newrelic][:memcached_ruby][:install_path] = "/opt/newrelic"
+default[:newrelic][:memcached_ruby][:plugin_path] = "#{node[:newrelic][:memcached_ruby][:install_path]}/newrelic_memcached_ruby_plugin"

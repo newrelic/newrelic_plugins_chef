@@ -15,18 +15,20 @@ Recipes for the following plugins are provided:
  - AWS Cloudwatch
  - MySQL
  - F5
+ - Memcached - Java
+ - Memcached - Ruby
  - Example (Ruby)
 
 ## Requirements ##
 
 Chef 0.10.10+ and Ohai 6.10+ for `platform_family` support.
 
-The AWS Cloudwatch, F5 and Example plugins require:
+The AWS Cloudwatch, F5, Memcached (Ruby) and Example plugins require:
 
 - Ruby >= 1.8.7 
 - Rubygems >= 1.8
 
-The MySQL plugin requires: 
+The MySQL and Memcached (Java) plugins require: 
 
 - Java Runtime Environment (JRE) >= 1.6
 
@@ -196,6 +198,42 @@ For additional info, see https://github.com/newrelic-platform/newrelic_example_p
 
 For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
 
+## Memcached (Ruby) ##
+
+`node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+ 
+ `node[:newrelic][:memcached_ruby][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. The plugin will be installed within this directory at `newrelic_memcached_ruby_plugin`.
+ 
+ `node[:newrelic][:memcached_ruby][:user]` - _(required)_ User to run as
+ 
+ `node[:newrelic][:memcached_ruby][:agents]` - _(required)_ Array of Memcached hosts to monitor.
+ 
+#### Usage: ####
+
+    name "newrelic_memcached_ruby_plugin"
+    description "System that monitors Memcached"
+    run_list(
+      "recipe[newrelic_plugins::memcached_ruby]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "memcached" => {
+          "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
+          "agents" => [
+            {
+              "name"           => "Host - 1",
+              "endpoint"       => "localhost",
+              "port"           => 11211
+            }
+          ]
+        }
+      }
+    )
+
+For additional info, see https://github.com/newrelic-platform/newrelic_memcached_plugin
+
 ## MySQL Plugin ##
 
 #### Attributes: ####
@@ -246,6 +284,51 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
 
 For additional info, see https://github.com/newrelic-platform/newrelic_mysql_java_plugin
 
+## Memcached (Java) ##
+
+#### Attributes: ####
+ 
+ `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+ 
+ `node[:newrelic][:memcached_java][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_memcached_java_plugin`.
+ 
+ `node[:newrelic][:memcached_java][:user]` - _(required)_ User to run as. Defaults to `root`.
+ 
+ `node[:newrelic][:memcached_java][:servers]` -  _(required)_ Array of Memcached Servers. If using the default port, the `port` attribute can be left off.
+
+ `node[:newrelic][:memcached_java][:java_options]` -  _(optional)_ String of java options that will be passed to the init script java command. E.g. `-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345` for proxy support. Defaults to `-Xmx128m` for max 128mb heap size, but can be overridden.
+ 
+#### Usage: ####
+
+    name "newrelic_memcached_java_plugin"
+    description "System that monitors Memcached Servers"
+    run_list(
+      "recipe[newrelic_plugins::memcached_java]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "memcached" => {
+          "install_path" => "/path/to/plugin",
+          "user" => "newrelic",
+          "java_options" => "-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345",
+          "servers" => [
+            {
+              "name" => "Host - 1",
+              "host" => "host.example.com",
+              "port" => 11211
+            },
+            {
+              "name" => "Host - 2",
+              "host" => "host2.example.com"        
+            }
+          ]
+        }
+      }
+    )
+
+For additional info, see https://github.com/newrelic-platform/newrelic_memcached_java_plugin
+ 
 ## License ##
 
 This cookbook is under the included MIT License.
