@@ -12,23 +12,25 @@ This cookbook installs, configures and manages as a service New Relic Plugins on
 
 Recipes for the following plugins are provided:
 
- - AWS Cloudwatch
- - MySQL
- - F5
- - Memcached - Java
- - Memcached - Ruby
- - Example (Ruby)
+ - [AWS Cloudwatch](#aws-cloudwatch-plugin)
+ - [Example (Ruby)](#example-plugin)
+ - [F5](#f-plugin)
+ - [Memcached - Java](#memcached-java)
+ - [Memcached - Ruby](#memcached-ruby)
+ - [MySQL](#mysql-plugin)
+ - [Wikipedia Example Java](#wikipedia-example-java-plugin)
+ - [Wikipedia Example Ruby](#wikipedia-example-ruby-plugin)
 
 ## Requirements ##
 
 Chef 0.10.10+ and Ohai 6.10+ for `platform_family` support.
 
-The AWS Cloudwatch, F5, Memcached (Ruby) and Example plugins require:
+The AWS Cloudwatch, Example, F5, Memcached (Ruby), and Wikipedia Example (Ruby) plugins require:
 
 - Ruby >= 1.8.7 
 - Rubygems >= 1.8
 
-The MySQL and Memcached (Java) plugins require: 
+The MySQL, Memcached (Java) and Wikipedia Example (Java) plugins require: 
 
 - Java Runtime Environment (JRE) >= 1.6
 
@@ -328,7 +330,65 @@ For additional info, see https://github.com/newrelic-platform/newrelic_mysql_jav
     )
 
 For additional info, see https://github.com/newrelic-platform/newrelic_memcached_java_plugin
+
+## Wikipedia Example Java Plugin
+
+#### Attributes: ####
  
+ `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+ 
+ `node[:newrelic][:wikipedia_example_java][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_wikipedia_example_java_plugin`.
+ 
+ `node[:newrelic][:wikipedia_example_java][:user]` - _(required)_ User to run as.
+
+#### Usage: ####
+
+    name "newrelic_wikipedia_example_java_plugin"
+    description "System that monitors Wikipedia"
+    run_list(
+      "recipe[newrelic_plugins::wikipedia_example_java]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "wikipedia_example_java" => {
+          "install_path" => "/path/to/plugin",
+          "user" => "newrelic"
+        }
+      }
+    )
+    
+For additional info, see https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin
+
+## Wikipedia Example Ruby Plugin
+
+#### Attributes: ####
+ 
+ `node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+ 
+ `node[:newrelic][:wikipedia_example_ruby][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. Any downloaded files will be placed here. The plugin will be installed within this directory at `newrelic_wikipedia_example_ruby_plugin`.
+ 
+ `node[:newrelic][:wikipedia_example_ruby][:user]` - _(required)_ User to run as.
+
+#### Usage: ####
+
+    name "newrelic_wikipedia_example_ruby_plugin"
+    description "System that monitors Wikipedia"
+    run_list(
+      "recipe[newrelic_plugins::wikipedia_example_ruby]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "wikipedia_example_ruby" => {
+          "install_path" => "/path/to/plugin",
+          "user" => "newrelic"
+        }
+      }
+    )
+
+For additional info, see https://github.com/newrelic-platform/newrelic_wikipedia_plugin
+
 ## License ##
 
 This cookbook is under the included MIT License.

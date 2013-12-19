@@ -36,3 +36,15 @@ default[:newrelic][:memcached_ruby][:version] = "1.0.1"
 default[:newrelic][:memcached_ruby][:download_url] = "https://github.com/newrelic-platform/newrelic_memcached_plugin/archive/release/#{node[:newrelic][:memcached_ruby][:version]}.tar.gz"
 default[:newrelic][:memcached_ruby][:install_path] = "/opt/newrelic"
 default[:newrelic][:memcached_ruby][:plugin_path] = "#{node[:newrelic][:memcached_ruby][:install_path]}/newrelic_memcached_ruby_plugin"
+
+# wikipedia example java plugin attributes
+default[:newrelic][:wikipedia_example_java][:version] = "1.0.8"
+default[:newrelic][:wikipedia_example_java][:download_url] = "https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin/raw/master/dist/newrelic_wikipedia_plugin-#{node[:newrelic][:wikipedia_example_java][:version]}.tar.gz"
+default[:newrelic][:wikipedia_example_java][:install_path] = "/opt/newrelic"
+default[:newrelic][:wikipedia_example_java][:plugin_path] = "#{node[:newrelic][:wikipedia_example_java][:install_path]}/newrelic_wikipedia_example_java_plugin"
+
+# wikipedia example ruby plugin attributes
+default[:newrelic][:wikipedia_example_ruby][:version] = "1.0.3"
+default[:newrelic][:wikipedia_example_ruby][:download_url] = "https://github.com/newrelic-platform/newrelic_wikipedia_plugin/archive/#{node[:newrelic][:wikipedia_example_ruby][:version]}.tar.gz"
+default[:newrelic][:wikipedia_example_ruby][:install_path] = "/opt/newrelic"
+default[:newrelic][:wikipedia_example_ruby][:plugin_path] = "#{node[:newrelic][:wikipedia_example_ruby][:install_path]}/newrelic_wikipedia_example_ruby_plugin"

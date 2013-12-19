@@ -34,7 +34,7 @@ define :install_plugin do
     EOH
     user params[:user]
     # directory is empty if it has 2 entries (implicit . and .. entries)
-    only_if { File.directory?(params[:plugin_path]) && Dir.entries(params[:plugin_path]) == %w(. ..) }
+    only_if { File.directory?(params[:plugin_path]) && Dir.entries(params[:plugin_path]).sort == %w(. ..) }
   end
 
 end
