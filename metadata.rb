@@ -10,6 +10,10 @@ recipe 'newrelic_plugins::aws_cloudwatch', 'Installs New Relic AWS Cloudwatch Pl
 recipe 'newrelic_plugins::example', 'Installs New Relic Example Plugin'
 recipe 'newrelic_plugins::f5', 'Installs New Relic F5 Plugin'
 recipe 'newrelic_plugins::mysql', 'Installs New Relic MySQL Plugin'
+recipe 'newrelic_plugins::memcached_java', 'Installs New Relic Memcached Java Plugin'
+recipe 'newrelic_plugins::memcached_ruby', 'Installs New Relic Memcached Ruby Plugin'
+recipe 'newrelic_plugins::wikipedia_example_java', 'Installs New Relic Wikipedia Example Java Plugin'
+recipe 'newrelic_plugins::wikipedia_example_ruby', 'Installs New Relic Wikipedia Example Ruby Plugin'
 
 %w{ debian ubuntu centos suse fedora redhat }.each do |os|
   supports os
@@ -22,9 +26,13 @@ attribute 'newrelic/license_key',
   :required => 'required',
   :recipes => [
     'newrelic_plugins::aws_cloudwatch',
-    'newrelic_plugins::f5',
     'newrelic_plugins::example',
-    'newrelic_plugins::mysql'
+    'newrelic_plugins::f5',
+    'newrelic_plugins::mysql',
+    'newrelic_plugins::memcached_java',
+    'newrelic_plugins::memcached_ruby',
+    'newrelic_plugins::wikipedia_example_java',
+    'newrelic_plugins::wikipedia_example_ruby'
   ]
 
 attribute 'newrelic/aws_cloudwatch/install_path',
@@ -135,3 +143,84 @@ attribute 'newrelic/mysql_plugin/java_options',
   :type => 'string',
   :required => 'optional',
   :recipes => ['newrelic_plugins::mysql']
+
+attribute 'newrelic/memcached_java/install_path',
+  :display_name => 'New Relic Memcached Java Plugin Install Path',
+  :description => 'Install Path for New Relic Memcached Java Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::memcached_java']
+
+attribute 'newrelic/memcached_java/user',
+  :display_name => 'New Relic Memcached Java Plugin User',
+  :description => 'User to run as for New Relic Memcached Java Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::memcached_java']
+
+attribute 'newrelic/memcached_java/servers',
+  :display_name => 'New Relic Memcached Java Plugin Servers',
+  :description => 'Memcached servers for New Relic Memcached Java Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::memcached_java']
+
+attribute 'newrelic/memcached_java/java_options',
+  :display_name => 'New Relic Memcached Java Plugin Java Options',
+  :description => 'Java options for New Relic Memcached Java Plugin',
+  :type => 'string',
+  :required => 'optional',
+  :recipes => ['newrelic_plugins::memcached_java']
+
+attribute 'newrelic/memcached_ruby/install_path',
+  :display_name => 'New Relic Memcached Ruby Plugin Install Path',
+  :description => 'Install Path for New Relic Memcached Ruby Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::memcached_ruby']
+
+attribute 'newrelic/memcached_ruby/user',
+  :display_name => 'New Relic Memcached Ruby Plugin User',
+  :description => 'User to run as for New Relic Memcached Ruby Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::memcached_ruby']
+
+attribute 'newrelic/memcached_ruby/agents',
+  :display_name => 'New Relic Memcached Ruby Plugin Agents',
+  :description => 'Agents for New Relic Memcached Ruby Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::memcached_ruby']
+
+attribute 'newrelic/wikipedia_example_java/install_path',
+  :display_name => 'New Relic Wikipedia Example Java Plugin Install Path',
+  :description => 'Install Path for New Relic Wikipedia Example Java Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::wikipedia_example_java']
+
+attribute 'newrelic/wikipedia_example_java/user',
+  :display_name => 'New Relic Wikipedia Example Java Plugin User',
+  :description => 'User to run as for New Relic Wikipedia Example Java Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::wikipedia_example_java']
+
+attribute 'newrelic/wikipedia_example_ruby/install_path',
+  :display_name => 'New Relic Wikipedia Example Ruby Plugin Install Path',
+  :description => 'Install Path for New Relic Wikipedia Example Ruby Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::wikipedia_example_ruby']
+
+attribute 'newrelic/wikipedia_example_ruby/user',
+  :display_name => 'New Relic Wikipedia Example Ruby Plugin User',
+  :description => 'User to run as for New Relic Wikipedia Example Ruby Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::wikipedia_example_ruby']
