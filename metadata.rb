@@ -12,6 +12,7 @@ recipe 'newrelic_plugins::f5', 'Installs New Relic F5 Plugin'
 recipe 'newrelic_plugins::mysql', 'Installs New Relic MySQL Plugin'
 recipe 'newrelic_plugins::memcached_java', 'Installs New Relic Memcached Java Plugin'
 recipe 'newrelic_plugins::memcached_ruby', 'Installs New Relic Memcached Ruby Plugin'
+recipe 'newrelic_plugins::rackspace_load_balancers', 'Installs New Relic Rackspace Load Balancers Plugin'
 recipe 'newrelic_plugins::wikipedia_example_java', 'Installs New Relic Wikipedia Example Java Plugin'
 recipe 'newrelic_plugins::wikipedia_example_ruby', 'Installs New Relic Wikipedia Example Ruby Plugin'
 
@@ -31,6 +32,7 @@ attribute 'newrelic/license_key',
     'newrelic_plugins::mysql',
     'newrelic_plugins::memcached_java',
     'newrelic_plugins::memcached_ruby',
+    'newrelic_plugins::rackspace_load_balancers',
     'newrelic_plugins::wikipedia_example_java',
     'newrelic_plugins::wikipedia_example_ruby'
   ]
@@ -194,6 +196,42 @@ attribute 'newrelic/memcached_ruby/agents',
   :type => 'string',
   :required => 'required',
   :recipes => ['newrelic_plugins::memcached_ruby']
+
+attribute 'newrelic/rackspace_load_balancers/install_path',
+  :display_name => 'New Relic Rackspace Load Balancers Plugin Install Path',
+  :description => 'Install Path for Rackspace Load Balancers Plugin',
+  :type => 'string',
+  :required => 'required',
+  :default => '/opt/newrelic',
+  :recipes => ['newrelic_plugins::rackspace_load_balancers']
+
+attribute 'newrelic/rackspace_load_balancers/user',
+  :display_name => 'New Relic Rackspace Load Balancers Plugin User',
+  :description => 'User to run as for New Relic Rackspace Load Balancers Plugin',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::rackspace_load_balancers']
+
+attribute 'newrelic/rackspace_load_balancers/username',
+  :display_name => 'New Relic Rackspace Load Balancers Plugin Username',
+  :description => 'Username for Rackspace Load Balancers',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::rackspace_load_balancers']
+
+attribute 'newrelic/rackspace_load_balancers/api_key',
+  :display_name => 'New Relic Rackspace Load Balancers API Key',
+  :description => 'API Key for Rackspace Load Balancers',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::rackspace_load_balancers']
+
+attribute 'newrelic/rackspace_load_balancers/region',
+  :display_name => 'New Relic Rackspace Load Balancers Region',
+  :description => 'Region for Rackspace Load Balancers',
+  :type => 'string',
+  :required => 'required',
+  :recipes => ['newrelic_plugins::rackspace_load_balancers']
 
 attribute 'newrelic/wikipedia_example_java/install_path',
   :display_name => 'New Relic Wikipedia Example Java Plugin Install Path',
