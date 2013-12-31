@@ -18,6 +18,7 @@ Recipes for the following plugins are provided:
  - [Memcached - Java](#memcached-java)
  - [Memcached - Ruby](#memcached-ruby)
  - [MySQL](#mysql-plugin)
+ - [Rackspace Load Balancers](#rackspace-load-balancers-plugin)
  - [Wikipedia Example Java](#wikipedia-example-java-plugin)
  - [Wikipedia Example Ruby](#wikipedia-example-ruby-plugin)
 
@@ -25,7 +26,7 @@ Recipes for the following plugins are provided:
 
 Chef 0.10.10+ and Ohai 6.10+ for `platform_family` support.
 
-The AWS Cloudwatch, Example, F5, Memcached (Ruby), and Wikipedia Example (Ruby) plugins require:
+The AWS Cloudwatch, Example, F5, Memcached (Ruby), Rackspace Load Balancers, and Wikipedia Example (Ruby) plugins require:
 
 - Ruby >= 1.8.7 
 - Rubygems >= 1.8
@@ -330,6 +331,42 @@ For additional info, see https://github.com/newrelic-platform/newrelic_memcached
     )
 
 For additional info, see https://github.com/newrelic-platform/newrelic_mysql_java_plugin
+
+## Rackspace Load Balancers ##
+
+`node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+ 
+`node[:newrelic][:rackspace_load_balancers][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. The plugin will be installed within this directory at `newrelic_rackspace_load_balancers_plugin`.
+ 
+`node[:newrelic][:rackspace_load_balancers][:user]` - _(required)_ User to run as.
+ 
+`node[:newrelic][:rackspace_load_balancers][:username]` - _(required)_ Username for Rackspace Load Balancers
+ 
+`node[:newrelic][:rackspace_load_balancers][:api_key]` - _(required)_ API Key for Rackspace Load Balancers
+
+`node[:newrelic][:rackspace_load_balancers][:region]` - _(required)_ Region for Rackspace Load Balancers. Valid values: `ord`, `dfw`, or `lon`
+ 
+#### Usage: ####
+
+    name "newrelic_rackspace_load_balancers_plugin"
+    description "System that monitors Rackspace Load Balancers"
+    run_list(
+      "recipe[newrelic_plugins::rackspace_load_balancers]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "rackspace_load_balancers" => {
+          "install_path" => "/path/to/plugin",
+          "user"         => "newrelic",
+          "username"     => "RACKSPACE_USERNAME",
+          "api_key"      => "RACKSPACE_API_KEY",
+          "region"       => "dfw"
+        }
+      }
+    )
+
+For additional info, see https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin
 
 ## Wikipedia Example Java Plugin
 

@@ -37,6 +37,12 @@ default[:newrelic][:memcached_ruby][:download_url] = "https://github.com/newreli
 default[:newrelic][:memcached_ruby][:install_path] = "/opt/newrelic"
 default[:newrelic][:memcached_ruby][:plugin_path] = "#{node[:newrelic][:memcached_ruby][:install_path]}/newrelic_memcached_ruby_plugin"
 
+# rackspace load balancers attributes
+default[:newrelic][:rackspace_load_balancers][:version] = "1.1.0"
+default[:newrelic][:rackspace_load_balancers][:download_url] = "https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin/archive/#{node[:newrelic][:rackspace_load_balancers][:version]}.tar.gz"
+default[:newrelic][:rackspace_load_balancers][:install_path] = "/opt/newrelic"
+default[:newrelic][:rackspace_load_balancers][:plugin_path] = "#{node[:newrelic][:rackspace_load_balancers][:install_path]}/newrelic_rackspace_load_balancers_plugin"
+
 # wikipedia example java plugin attributes
 default[:newrelic][:wikipedia_example_java][:version] = "1.0.8"
 default[:newrelic][:wikipedia_example_java][:download_url] = "https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin/raw/master/dist/newrelic_wikipedia_plugin-#{node[:newrelic][:wikipedia_example_java][:version]}.tar.gz"

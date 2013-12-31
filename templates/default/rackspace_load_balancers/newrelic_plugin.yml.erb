@@ -1,0 +1,24 @@
+# Please make sure to update the license_key information with the
+# license key for your New Relic account.
+#
+newrelic:
+  #
+  # Update with your New Relic account license key:
+  #
+  license_key: '<%= node[:newrelic][:license_key] %>'
+  #
+  # Set to '1' for verbose output, remove for normal output.
+  # All output goes to stdout/stderr.
+  #
+  # verbose: 1
+#
+# Rackspace configuration.
+#
+rackspace:
+  username: '<%= node[:newrelic][:rackspace_load_balancers][:username] %>'
+  api_key: '<%= node[:newrelic][:rackspace_load_balancers][:api_key] %>'
+  region: '<%= node[:newrelic][:rackspace_load_balancers][:region] %>'
+
+agents:
+  rackspace_lb:
+    enabled: true
