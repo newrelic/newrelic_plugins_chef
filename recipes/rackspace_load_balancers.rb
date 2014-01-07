@@ -26,21 +26,12 @@ else
   package 'libxslt-devel'
 end
 
-# bundle install dependency
-package 'git'
-
 install_plugin 'newrelic_rackspace_load_balancers_plugin' do
   plugin_version   node[:newrelic][:rackspace_load_balancers][:version]
   install_path     node[:newrelic][:rackspace_load_balancers][:install_path]
   plugin_path      node[:newrelic][:rackspace_load_balancers][:plugin_path]
   download_url     node[:newrelic][:rackspace_load_balancers][:download_url]
   user             node[:newrelic][:rackspace_load_balancers][:user]
-end
-
-directory "#{node[:newrelic][:rackspace_load_balancers][:plugin_path]}/config" do
-  action :create
-  recursive true
-  owner node[:newrelic][:rackspace_load_balancers][:user]
 end
 
 # newrelic template
@@ -55,7 +46,6 @@ end
 bundle_install do
   path node[:newrelic][:rackspace_load_balancers][:plugin_path]
   user node[:newrelic][:rackspace_load_balancers][:user]
-  bin_stubs true
 end
 
 # install init.d script and start service
