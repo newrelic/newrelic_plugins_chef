@@ -1,14 +1,10 @@
 ## New Relic Plugin's Cookbook ##
 
-### Note: This Cookbook is currently in Beta ###
-
-The cookbook will be moved to the Chef Community after the beta. To use the cookbook, clone or download this repo and add it to your Chef cookbooks path under the name `newrelic_plugins`. Follow the usage instructions below.
-
-Please provide any feedback to <jstenhouse@newrelic.com> or create a pull request here. Thanks!
-
 ## Overview ##
 
-This cookbook installs, configures and manages as a service New Relic Plugins on Debian/RHEL. 
+This cookbook installs, configures and manages as a service New Relic Plugins on Debian/RHEL.
+
+To use the cookbook, add it to your Chef cookbooks path under the name `newrelic_plugins`.
 
 Recipes for the following plugins are provided:
 
