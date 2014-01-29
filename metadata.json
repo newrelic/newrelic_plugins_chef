@@ -1,0 +1,43 @@
+{
+  "name": "newrelic_plugins",
+  "version": "1.0.0",
+  "description": "Installs New Relic Plugins",
+  "maintainer": "New Relic, Inc.",
+  "maintainer_email": "support@newrelic.com",
+  "license": "MIT",
+  "platforms": {
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "suse": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "newrelic_plugins::aws_cloudwatch": "Installs New Relic AWS Cloudwatch Plugin",
+    "newrelic_plugins::example": "Installs New Relic Example Plugin",
+    "newrelic_plugins::f5": "Installs New Relic F5 Plugin",
+    "newrelic_plugins::mysql": "Installs New Relic MySQL Plugin",
+    "newrelic_plugins::memcached_java": "Installs New Relic Memcached Java Plugin",
+    "newrelic_plugins::memcached_ruby": "Installs New Relic Memcached Ruby Plugin",
+    "newrelic_plugins::rackspace_load_balancers": "Installs New Relic Rackspace Load Balancers Plugin",
+    "newrelic_plugins::wikipedia_example_java": "Installs New Relic Wikipedia Example Java Plugin",
+    "newrelic_plugins::wikipedia_example_ruby": "Installs New Relic Wikipedia Example Ruby Plugin"
+  }
+}
