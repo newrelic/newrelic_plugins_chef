@@ -5,7 +5,7 @@ default[:newrelic][:aws_cloudwatch][:install_path] = "/opt/newrelic"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
 
 # mysql plugin attributes
-default[:newrelic][:mysql][:version] = "1.2.0"
+default[:newrelic][:mysql][:version] = "1.2.1"
 default[:newrelic][:mysql][:user] = "root"                #mysql auth info is in a conf file controled by this user
 default[:newrelic][:mysql][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_mysql_java_plugin/master/dist/newrelic_mysql_plugin-#{node[:newrelic][:mysql][:version]}.tar.gz"
 default[:newrelic][:mysql][:install_path] = "/opt/newrelic"
