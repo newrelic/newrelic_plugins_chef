@@ -4,8 +4,9 @@ define :install_plugin do
 
   # create install path
   directory params[:install_path] do
-    action :create
     owner params[:user]
+    action :create
+    recursive true
   end
 
   # download plugin tar file
