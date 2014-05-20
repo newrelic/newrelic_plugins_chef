@@ -4,7 +4,7 @@ maintainer_email  'support@newrelic.com'
 license           'MIT'
 description       'Installs New Relic Plugins.'
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           '1.0.0'
+version           '1.0.1'
 
 recipe 'newrelic_plugins::aws_cloudwatch', 'Installs New Relic AWS Cloudwatch Plugin'
 recipe 'newrelic_plugins::example', 'Installs New Relic Example Plugin'

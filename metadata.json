@@ -1,6 +1,6 @@
 {
   "name": "newrelic_plugins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Installs New Relic Plugins",
   "maintainer": "New Relic, Inc.",
   "maintainer_email": "support@newrelic.com",
