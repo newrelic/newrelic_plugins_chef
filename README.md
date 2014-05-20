@@ -221,7 +221,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_f5_plugin
     default_attributes(
       "newrelic" => {
         "license_key" => "NEW_RELIC_LICENSE_KEY",
-        "memcached" => {
+        "memcached_java" => {
           "install_path" => "/path/to/plugin",
           "user" => "newrelic",
           "java_options" => "-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=12345",
@@ -262,7 +262,7 @@ For additional info, see https://github.com/newrelic-platform/newrelic_memcached
     default_attributes(
       "newrelic" => {
         "license_key" => "NEW_RELIC_LICENSE_KEY",
-        "memcached" => {
+        "memcached_ruby" => {
           "install_path" => "/path/to/plugin",
           "user" => "newrelic",
           "agents" => [
