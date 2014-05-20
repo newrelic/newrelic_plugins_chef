@@ -1,0 +1,17 @@
+{
+  "agents": [
+    <% node[:newrelic][:mysql][:servers].each do |server| %>
+        {
+            "name"    : "<%= server[:name] %>",
+            "host"    : "<%= server[:host] %>",
+            "metrics" : "<%= server[:metrics] %>",
+            <% if server[:mysql_user] %>
+                "user"    : "<%= server[:mysql_user] %>",
+            <% end %>
+            <% if server[:mysql_passwd] %>
+                "passwd"  : "<%= server[:mysql_passwd] %>"
+            <% end %>
+        }
+    <% end %>
+  ]
+}
