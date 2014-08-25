@@ -43,6 +43,13 @@ default[:newrelic][:rackspace_load_balancers][:download_url] = "https://github.c
 default[:newrelic][:rackspace_load_balancers][:install_path] = "/opt/newrelic"
 default[:newrelic][:rackspace_load_balancers][:plugin_path] = "#{node[:newrelic][:rackspace_load_balancers][:install_path]}/newrelic_rackspace_load_balancers_plugin"
 
+# rackspace queues attributes
+default[:newrelic][:rackspace_queues][:version] = "1.2.0-fork"
+# see PR https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin/pull/8
+default[:newrelic][:rackspace_queues][:download_url] = "https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin/archive/#{node[:newrelic][:rackspace_queues][:version]}.tar.gz"
+default[:newrelic][:rackspace_queues][:install_path] = "/opt/newrelic"
+default[:newrelic][:rackspace_queues][:plugin_path] = "#{node[:newrelic][:rackspace_queues][:install_path]}/newrelic_rackspace_queues_plugin"
+
 # wikipedia example java plugin attributes
 default[:newrelic][:wikipedia_example_java][:version] = "1.0.8"
 default[:newrelic][:wikipedia_example_java][:download_url] = "https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin/raw/master/dist/newrelic_wikipedia_plugin-#{node[:newrelic][:wikipedia_example_java][:version]}.tar.gz"
