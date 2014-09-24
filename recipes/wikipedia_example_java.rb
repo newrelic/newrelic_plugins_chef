@@ -35,5 +35,6 @@ plugin_service 'newrelic-wikipedia-example-java-plugin' do
   daemon_dir      node[:newrelic][:wikipedia_example_java][:plugin_path]
   plugin_name     'Wikipedia Example Java Plugin'
   plugin_version  node[:newrelic][:wikipedia_example_java][:version]
-  run_command     "sudo -u #{node[:newrelic][:wikipedia_example_java][:user]} java #{node[:newrelic][:wikipedia_example_java][:java_options]} -jar"
+  user            node[:newrelic][:wikipedia_example_java][:user]
+  run_command     "java #{node[:newrelic][:wikipedia_example_java][:java_options]} -jar"
 end

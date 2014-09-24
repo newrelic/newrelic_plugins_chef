@@ -54,5 +54,6 @@ plugin_service 'newrelic-rackspace-load-balancers-plugin' do
   daemon_dir      node[:newrelic][:rackspace_load_balancers][:plugin_path]
   plugin_name     'Rackspace Load Balancers'
   plugin_version  node[:newrelic][:rackspace_load_balancers][:version]
-  run_command     "sudo -u #{node[:newrelic][:rackspace_load_balancers][:user]} bundle exec"
+  user            node[:newrelic][:rackspace_load_balancers][:user]
+  run_command     'bundle exec'
 end

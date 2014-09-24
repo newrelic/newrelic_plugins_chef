@@ -40,5 +40,6 @@ plugin_service 'newrelic-wikipedia-example-ruby-plugin' do
   daemon_dir      node[:newrelic][:wikipedia_example_ruby][:plugin_path]
   plugin_name     'Wikipedia Example Ruby Plugin'
   plugin_version  node[:newrelic][:wikipedia_example_ruby][:version]
-  run_command     "sudo -u #{node[:newrelic][:wikipedia_example_ruby][:user]} bundle exec"
+  user            node[:newrelic][:wikipedia_example_ruby][:user]
+  run_command     'bundle exec'
 end
