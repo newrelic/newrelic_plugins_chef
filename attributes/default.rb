@@ -1,5 +1,5 @@
 # aws cloudwatch plugin attributes
-default[:newrelic][:aws_cloudwatch][:version] = "3.3.0"
+default[:newrelic][:aws_cloudwatch][:version] = "3.3.1"
 default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newrelic-platform/newrelic_aws_cloudwatch_plugin/archive/#{node[:newrelic][:aws_cloudwatch][:version]}.tar.gz"
 default[:newrelic][:aws_cloudwatch][:install_path] = "/opt/newrelic"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
@@ -13,7 +13,7 @@ default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_p
 default[:newrelic][:mysql][:java_options] = '-Xmx128m'
 
 # memcached (java) plugin attributes
-default[:newrelic][:memcached_java][:version] = "1.0.1"
+default[:newrelic][:memcached_java][:version] = "2.0.0"
 default[:newrelic][:memcached_java][:user] = "root"
 default[:newrelic][:memcached_java][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_memcached_java_plugin/master/dist/newrelic_memcached_plugin-#{node[:newrelic][:memcached_java][:version]}.tar.gz"
 default[:newrelic][:memcached_java][:install_path] = "/opt/newrelic"
@@ -44,7 +44,7 @@ default[:newrelic][:rackspace_load_balancers][:install_path] = "/opt/newrelic"
 default[:newrelic][:rackspace_load_balancers][:plugin_path] = "#{node[:newrelic][:rackspace_load_balancers][:install_path]}/newrelic_rackspace_load_balancers_plugin"
 
 # wikipedia example java plugin attributes
-default[:newrelic][:wikipedia_example_java][:version] = "1.0.8"
+default[:newrelic][:wikipedia_example_java][:version] = "2.0.0"
 default[:newrelic][:wikipedia_example_java][:download_url] = "https://github.com/newrelic-platform/newrelic_java_wikipedia_plugin/raw/master/dist/newrelic_wikipedia_plugin-#{node[:newrelic][:wikipedia_example_java][:version]}.tar.gz"
 default[:newrelic][:wikipedia_example_java][:install_path] = "/opt/newrelic"
 default[:newrelic][:wikipedia_example_java][:plugin_path] = "#{node[:newrelic][:wikipedia_example_java][:install_path]}/newrelic_wikipedia_example_java_plugin"

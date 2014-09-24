@@ -21,18 +21,18 @@ install_plugin 'newrelic_memcached_java_plugin' do
   user             node[:newrelic][:memcached_java][:user]
 end
 
-# create template newrelic.properties file
-template "#{node[:newrelic][:memcached_java][:plugin_path]}/config/newrelic.properties" do
-  source 'memcached_java/newrelic.properties.erb'
+# create template newrelic.json file
+template "#{node[:newrelic][:memcached_java][:plugin_path]}/config/newrelic.json" do
+  source 'memcached_java/newrelic.json.erb'
   action :create
   owner node[:newrelic][:memcached_java][:user]
   mode "0400"
   notifies :restart, "service[newrelic-memcached-java-plugin]"
 end
 
-# create template memcached.hosts.json file
-template "#{node[:newrelic][:memcached_java][:plugin_path]}/config/memcached.hosts.json" do
-  source 'memcached_java/memcached.hosts.json.erb'
+# create template plugin.json file
+template "#{node[:newrelic][:memcached_java][:plugin_path]}/config/plugin.json" do
+  source 'memcached_java/plugin.json.erb'
   action :create
   owner node[:newrelic][:memcached_java][:user]
   mode "0400"
@@ -41,7 +41,7 @@ end
 
 # install init.d script and start service
 plugin_service 'newrelic-memcached-java-plugin' do
-  daemon          'newrelic_memcached_plugin*.jar'
+  daemon          'plugin.jar'
   daemon_dir      node[:newrelic][:memcached_java][:plugin_path]
   plugin_name     'Memcached - Java'
   plugin_version  node[:newrelic][:memcached_java][:version]
