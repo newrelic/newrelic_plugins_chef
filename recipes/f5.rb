@@ -44,5 +44,6 @@ plugin_service 'newrelic-f5-plugin' do
   daemon_dir      node[:newrelic][:f5][:plugin_path]
   plugin_name     'F5'
   plugin_version  node[:newrelic][:f5][:version]
-  run_command     "sudo -u #{node[:newrelic][:f5][:user]} f5_monitor run"
+  user            node[:newrelic][:f5][:user]
+  run_command     'f5_monitor run'
 end

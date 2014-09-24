@@ -40,5 +40,6 @@ plugin_service 'newrelic-example-plugin' do
   daemon_dir      node[:newrelic][:example][:plugin_path]
   plugin_name     'Example'
   plugin_version  node[:newrelic][:example][:version]
-  run_command     "sudo -u #{node[:newrelic][:example][:user]} bundle exec"
+  user            node[:newrelic][:example][:user]
+  run_command     'bundle exec'
 end

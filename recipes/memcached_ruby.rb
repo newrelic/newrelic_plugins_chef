@@ -40,5 +40,6 @@ plugin_service 'newrelic-memcached-ruby-plugin' do
   daemon_dir      node[:newrelic][:memcached_ruby][:plugin_path]
   plugin_name     'Memcached - Ruby'
   plugin_version  node[:newrelic][:memcached_ruby][:version]
-  run_command     "sudo -u #{node[:newrelic][:memcached_ruby][:user]} bundle exec"
+  user            node[:newrelic][:memcached_ruby][:user]
+  run_command     'bundle exec'
 end

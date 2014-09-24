@@ -54,5 +54,6 @@ plugin_service 'newrelic-aws-cloudwatch-plugin' do
   daemon_dir      node[:newrelic][:aws_cloudwatch][:plugin_path]
   plugin_name     'AWS Cloudwatch'
   plugin_version  node[:newrelic][:aws_cloudwatch][:version]
-  run_command     "sudo -u #{node[:newrelic][:aws_cloudwatch][:user]} bundle exec"
+  user            node[:newrelic][:aws_cloudwatch][:user]
+  run_command     'bundle exec'
 end

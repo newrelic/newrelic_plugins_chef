@@ -6,6 +6,7 @@ define :plugin_service do
       :daemon       => params[:daemon],
       :daemon_dir   => params[:daemon_dir],
       :plugin_name  => params[:plugin_name],
+      :user         => params[:user],
       :run_command  => params[:run_command],
       :service_name => params[:name],
       :version      => params[:plugin_version]

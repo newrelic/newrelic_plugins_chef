@@ -45,5 +45,6 @@ plugin_service 'newrelic-memcached-java-plugin' do
   daemon_dir      node[:newrelic][:memcached_java][:plugin_path]
   plugin_name     'Memcached - Java'
   plugin_version  node[:newrelic][:memcached_java][:version]
-  run_command     "sudo -u #{node[:newrelic][:memcached_java][:user]} java #{node[:newrelic][:memcached_java][:java_options]} -jar"
+  user            node[:newrelic][:memcached_java][:user]
+  run_command     "java #{node[:newrelic][:memcached_java][:java_options]} -jar"
 end
