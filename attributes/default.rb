@@ -1,5 +1,5 @@
 # aws cloudwatch plugin attributes
-default[:newrelic][:aws_cloudwatch][:version] = "3.3.1"
+default[:newrelic][:aws_cloudwatch][:version] = "3.3.2"
 default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newrelic-platform/newrelic_aws_cloudwatch_plugin/archive/#{node[:newrelic][:aws_cloudwatch][:version]}.tar.gz"
 default[:newrelic][:aws_cloudwatch][:install_path] = "/opt/newrelic"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
@@ -13,7 +13,7 @@ default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_p
 default[:newrelic][:mysql][:java_options] = '-Xmx128m'
 
 # memcached (java) plugin attributes
-default[:newrelic][:memcached_java][:version] = "2.0.0"
+default[:newrelic][:memcached_java][:version] = "2.0.1"
 default[:newrelic][:memcached_java][:user] = "root"
 default[:newrelic][:memcached_java][:download_url] = "https://raw.github.com/newrelic-platform/newrelic_memcached_java_plugin/master/dist/newrelic_memcached_plugin-#{node[:newrelic][:memcached_java][:version]}.tar.gz"
 default[:newrelic][:memcached_java][:install_path] = "/opt/newrelic"
