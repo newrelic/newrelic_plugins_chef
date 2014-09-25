@@ -1,0 +1,13 @@
+{
+  "agents": [
+  <%- node[:newrelic][:memcached_java][:servers].each do |server| %>
+    {
+      "name" : "<%= !server['name'].nil? ? server['name'] : server['host'] %>",
+      "host" : "<%= server['host'] %>",
+      <%- if server['port'] %>
+      "port" : <%= server['port'] %>
+      <%- end %>
+    },
+  <%- end %>
+  ]
+}

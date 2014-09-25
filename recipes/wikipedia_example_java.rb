@@ -20,9 +20,18 @@ install_plugin 'newrelic_wikipedia_example_java_plugin' do
   user             node[:newrelic][:wikipedia_example_java][:user]
 end
 
-# create template newrelic.properties file
-template "#{node[:newrelic][:wikipedia_example_java][:plugin_path]}/config/newrelic.properties" do
-  source 'wikipedia_example_java/newrelic.properties.erb'
+# create template newrelic.json file
+template "#{node[:newrelic][:wikipedia_example_java][:plugin_path]}/config/newrelic.json" do
+  source 'wikipedia_example_java/newrelic.json.erb'
+  action :create
+  owner node[:newrelic][:wikipedia_example_java][:user]
+  mode '0400'
+  notifies :restart, "service[newrelic-wikipedia-example-java-plugin]"
+end
+
+# create template plugin.json file
+template "#{node[:newrelic][:wikipedia_example_java][:plugin_path]}/config/plugin.json" do
+  source 'wikipedia_example_java/plugin.json'
   action :create
   owner node[:newrelic][:wikipedia_example_java][:user]
   mode '0400'
@@ -31,7 +40,7 @@ end
 
 # install init.d script and start service
 plugin_service 'newrelic-wikipedia-example-java-plugin' do
-  daemon          'newrelic_wikipedia_plugin*.jar'
+  daemon          'plugin.jar'
   daemon_dir      node[:newrelic][:wikipedia_example_java][:plugin_path]
   plugin_name     'Wikipedia Example Java Plugin'
   plugin_version  node[:newrelic][:wikipedia_example_java][:version]
