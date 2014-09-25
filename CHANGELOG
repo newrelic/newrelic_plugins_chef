@@ -1,0 +1,11 @@
+CHANGELOG
+
+1.1.0 - 2014-09-25
+------------------
+* No longer use sudo for service management but runs as the provided user
+* Fix init daemon bug for restarts
+* Updated MySQL, Memcached (Java), and Wikipedia (Java) plugins to version 2.0.0+
+
+1.0.0 - 2014-01-29
+------------------
+* Initial release
