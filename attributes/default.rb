@@ -27,7 +27,7 @@ default[:newrelic][:example][:install_path] = "/opt/newrelic"
 default[:newrelic][:example][:plugin_path] = "#{node[:newrelic][:example][:install_path]}/newrelic_example_plugin"
 
 # f5 plugin attributes
-default[:newrelic][:f5][:version] = "1.0.9"
+default[:newrelic][:f5][:version] = "1.0.16"
 default[:newrelic][:f5][:install_path] = "/opt/newrelic"
 default[:newrelic][:f5][:plugin_path] = "#{node[:newrelic][:f5][:install_path]}/newrelic_f5_plugin"
 
