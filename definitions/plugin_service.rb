@@ -19,6 +19,6 @@ define :plugin_service do
   service params[:name] do
     action [:enable, :start]
     subscribes :restart, "template[/etc/init.d/#{params[:name]}]", :immediately
-    not_if "test  -f '/var/run/#{params[:name]}.pid' && ps `cat /var/run/#{params[:name]}.pid` > /dev/null 2>&1"
+    supports [:restart, :status]
   end
 end
