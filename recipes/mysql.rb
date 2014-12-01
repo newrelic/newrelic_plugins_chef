@@ -1,6 +1,3 @@
-# verify java dependency
-verify_java 'MySQL Plugin'
-
 # check required attributes
 verify_attributes do
   attributes [
