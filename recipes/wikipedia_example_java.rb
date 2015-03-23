@@ -12,7 +12,7 @@ end
 
 verify_license_key node[:newrelic][:license_key]
 
-install_plugin 'newrelic_wikipedia_example_java_plugin' do
+newrelic_plugin 'newrelic_wikipedia_example_java_plugin' do
   plugin_version   node[:newrelic][:wikipedia_example_java][:version]
   install_path     node[:newrelic][:wikipedia_example_java][:install_path]
   plugin_path      node[:newrelic][:wikipedia_example_java][:plugin_path]
