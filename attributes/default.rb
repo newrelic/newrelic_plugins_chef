@@ -1,5 +1,5 @@
 # aws cloudwatch plugin attributes
-default[:newrelic][:aws_cloudwatch][:version] = "3.3.2"
+default[:newrelic][:aws_cloudwatch][:version] = "3.3.3"
 default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newrelic-platform/newrelic_aws_cloudwatch_plugin/archive/#{node[:newrelic][:aws_cloudwatch][:version]}.tar.gz"
 default[:newrelic][:aws_cloudwatch][:install_path] = "/opt/newrelic"
 default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
