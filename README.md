@@ -364,6 +364,42 @@ For additional info, see https://github.com/newrelic-platform/newrelic_mysql_jav
 
 For additional info, see https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin
 
+## Rackspace Queues ##
+
+`node[:newrelic][:license_key]` - _(required)_ New Relic License Key
+
+`node[:newrelic][:rackspace_queues][:install_path]` -  _(required)_ Install directory. Defaults to `/opt/newrelic`. The plugin will be installed within this directory at `newrelic_rackspace_queues_plugin`.
+
+`node[:newrelic][:rackspace_queues][:user]` - _(required)_ User to run as.
+
+`node[:newrelic][:rackspace_queues][:username]` - _(required)_ Username for Rackspace Queues
+
+`node[:newrelic][:rackspace_queues][:api_key]` - _(required)_ API Key for Rackspace Queues
+
+`node[:newrelic][:rackspace_queues][:region]` - _(required)_ Region for Rackspace Queues. Valid values: `ord`, `dfw`, or `lon`
+
+#### Usage: ####
+
+    name "newrelic_rackspace_queues_plugin"
+    description "System that monitors Rackspace Queues"
+    run_list(
+      "recipe[newrelic_plugins::rackspace_queues]"
+    )
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "NEW_RELIC_LICENSE_KEY",
+        "rackspace_queues" => {
+          "install_path" => "/path/to/plugin",
+          "user"         => "newrelic",
+          "username"     => "RACKSPACE_USERNAME",
+          "api_key"      => "RACKSPACE_API_KEY",
+          "region"       => "dfw"
+        }
+      }
+    )
+
+For additional info, see https://github.com/newrelic-platform/newrelic_rackspace_load_balancers_plugin
+
 ## Wikipedia Example Java Plugin
 
 #### Attributes: ####
