@@ -7,8 +7,6 @@ verify_attributes do
     'node[:newrelic][:license_key]', 
     'node[:newrelic][:aws_cloudwatch][:install_path]', 
     'node[:newrelic][:aws_cloudwatch][:user]',
-    'node[:newrelic][:aws_cloudwatch][:aws_access_key]', 
-    'node[:newrelic][:aws_cloudwatch][:aws_secret_key]', 
     'node[:newrelic][:aws_cloudwatch][:agents]'
   ]
 end

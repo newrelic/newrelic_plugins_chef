@@ -56,14 +56,21 @@ attribute 'newrelic/aws_cloudwatch/aws_access_key',
   :display_name => 'New Relic AWS Cloudwatch Plugin Access Key',
   :description => 'AWS Access Key for New Relic AWS Cloudwatch Plugin',
   :type => 'string',
-  :required => 'required',
+  :required => 'optional',
   :recipes => ['newrelic_plugins::aws_cloudwatch']
 
 attribute 'newrelic/aws_cloudwatch/aws_secret_key',
   :display_name => 'New Relic AWS Cloudwatch Plugin Secret Key',
   :description => 'AWS Secret Key for New Relic AWS Cloudwatch Plugin',
   :type => 'string',
-  :required => 'required',
+  :required => 'optional',
+  :recipes => ['newrelic_plugins::aws_cloudwatch']
+
+attribute 'newrelic/aws_cloudwatch/use_aws_metadata',
+  :display_name => 'New Relic AWS Cloudwatch Plugin Use Instance Metadata',
+  :description => 'Use Instance Metadata for New Relic AWS Cloudwatch Plugin',
+  :type => 'boolean',
+  :required => 'optional',
   :recipes => ['newrelic_plugins::aws_cloudwatch']
 
 attribute 'newrelic/aws_cloudwatch/agents',
