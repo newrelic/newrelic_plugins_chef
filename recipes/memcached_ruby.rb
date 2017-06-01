@@ -29,7 +29,7 @@ template "#{node[:newrelic][:memcached_ruby][:plugin_path]}/config/newrelic_plug
 end
 
 # install bundler gem and run 'bundle install'
-bundle_install do
+newrelic_plugins_bundle_install do
   path node[:newrelic][:memcached_ruby][:plugin_path]
   user node[:newrelic][:memcached_ruby][:user]
 end

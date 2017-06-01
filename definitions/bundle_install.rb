@@ -1,4 +1,4 @@
-define :bundle_install do
+define :newrelic_plugins_bundle_install do
   # install bundler gem
   gem_package 'bundler' do
     options '--no-ri --no-rdoc'
