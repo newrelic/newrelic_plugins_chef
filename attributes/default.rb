@@ -11,6 +11,7 @@ default[:newrelic][:mysql][:download_url] = "https://raw.github.com/newrelic-pla
 default[:newrelic][:mysql][:install_path] = "/opt/newrelic"
 default[:newrelic][:mysql][:plugin_path] = "#{node[:newrelic][:mysql][:install_path]}/newrelic_mysql_plugin"
 default[:newrelic][:mysql][:java_options] = '-Xmx128m'
+default[:newrelic][:mysql][:java_bin] = 'java'
 
 # memcached (java) plugin attributes
 default[:newrelic][:memcached_java][:version] = "2.0.1"
