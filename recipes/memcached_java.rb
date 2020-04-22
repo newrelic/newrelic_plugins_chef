@@ -13,7 +13,7 @@ end
 
 verify_license_key node[:newrelic][:license_key]
 
-install_plugin 'newrelic_memcached_java_plugin' do
+newrelic_plugin 'newrelic_memcached_java_plugin' do
   plugin_version   node[:newrelic][:memcached_java][:version]
   install_path     node[:newrelic][:memcached_java][:install_path]
   plugin_path      node[:newrelic][:memcached_java][:plugin_path]

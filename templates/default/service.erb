@@ -32,7 +32,7 @@ start() {
     echo "Starting $NAME"
     cd $DAEMONDIR
     touch $PIDFILE ; chown <%= @user %> $PIDFILE
-    su <%= @user %> -c "<%= @run_command %> $DAEMON >> $DAEMONDIR/plugin_daemon.log 2>&1 & echo \$! > $PIDFILE"
+    su <%= @user %> -s '/bin/bash' -c "<%= @run_command %> $DAEMON >> $DAEMONDIR/plugin_daemon.log 2>&1 & echo \$! > $PIDFILE"
   fi
 }
 

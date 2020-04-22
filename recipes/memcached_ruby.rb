@@ -12,7 +12,7 @@ end
 
 verify_license_key node[:newrelic][:license_key]
 
-install_plugin 'newrelic_memcached_ruby_plugin' do
+newrelic_plugin 'newrelic_memcached_ruby_plugin' do
   plugin_version   node[:newrelic][:memcached_ruby][:version]
   install_path     node[:newrelic][:memcached_ruby][:install_path]
   plugin_path      node[:newrelic][:memcached_ruby][:plugin_path]
