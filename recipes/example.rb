@@ -29,7 +29,7 @@ template "#{node[:newrelic][:example][:plugin_path]}/config/newrelic_plugin.yml"
 end
 
 # install bundler gem and run 'bundle install'
-bundle_install do
+newrelic_plugins_bundle_install do
   path node[:newrelic][:example][:plugin_path]
   user node[:newrelic][:example][:user]
 end

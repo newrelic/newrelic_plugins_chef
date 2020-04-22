@@ -29,7 +29,7 @@ template "#{node[:newrelic][:wikipedia_example_ruby][:plugin_path]}/config/newre
 end
 
 # install bundler gem and run 'bundle install'
-bundle_install do
+newrelic_plugins_bundle_install do
   path node[:newrelic][:wikipedia_example_ruby][:plugin_path]
   user node[:newrelic][:wikipedia_example_ruby][:user]
 end

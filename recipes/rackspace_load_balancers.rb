@@ -43,7 +43,7 @@ template "#{node[:newrelic][:rackspace_load_balancers][:plugin_path]}/config/new
 end
 
 # install bundler gem and run 'bundle install'
-bundle_install do
+newrelic_plugins_bundle_install do
   path node[:newrelic][:rackspace_load_balancers][:plugin_path]
   user node[:newrelic][:rackspace_load_balancers][:user]
 end

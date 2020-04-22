@@ -43,7 +43,7 @@ template "#{node[:newrelic][:aws_cloudwatch][:plugin_path]}/config/newrelic_plug
 end
 
 # install bundler gem and run 'bundle install'
-bundle_install do
+newrelic_plugins_bundle_install do
   path node[:newrelic][:aws_cloudwatch][:plugin_path]
   user node[:newrelic][:aws_cloudwatch][:user]
 end
