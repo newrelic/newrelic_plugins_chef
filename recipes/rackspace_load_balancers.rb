@@ -26,7 +26,7 @@ else
   package 'libxslt-devel'
 end
 
-install_plugin 'newrelic_rackspace_load_balancers_plugin' do
+newrelic_plugin 'newrelic_rackspace_load_balancers_plugin' do
   plugin_version   node[:newrelic][:rackspace_load_balancers][:version]
   install_path     node[:newrelic][:rackspace_load_balancers][:install_path]
   plugin_path      node[:newrelic][:rackspace_load_balancers][:plugin_path]
