@@ -6,6 +6,9 @@ description       'Installs New Relic Plugins.'
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version           '1.1.0'
 
+depends 'ruby'
+depends 'rubygems'
+
 recipe 'newrelic_plugins::aws_cloudwatch', 'Installs New Relic AWS Cloudwatch Plugin'
 recipe 'newrelic_plugins::example', 'Installs New Relic Example Plugin'
 recipe 'newrelic_plugins::f5', 'Installs New Relic F5 Plugin'
