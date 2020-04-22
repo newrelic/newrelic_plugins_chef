@@ -16,8 +16,18 @@ newrelic:
 #
 aws:
   # Update with your AWS account keys:
+  <%- if node[:newrelic][:aws_cloudwatch][:aws_access_key] %>
   access_key: '<%= node[:newrelic][:aws_cloudwatch][:aws_access_key] %>'
+  <%- end %>
+  <%- if node[:newrelic][:aws_cloudwatch][:aws_secret_key] %>
   secret_key: '<%= node[:newrelic][:aws_cloudwatch][:aws_secret_key] %>'
+  <%- end %>
+
+  # Disable the key checks and enable usage of AWS instance metadata for setting keys
+  <%- if node[:newrelic][:aws_cloudwatch][:use_aws_metadata] %>
+  use_aws_metadata: <%= node[:newrelic][:aws_cloudwatch][:use_aws_metadata] %>
+  <%- end %>
+
   # Specify AWS regions to query for metrics
   # regions:
   #   us-east-1
